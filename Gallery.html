@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lesego PPS | Gallery</title>
+
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 1px;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fefefe;
+        background-image: url('images/site pic/log_01.jpg'); 
+        background-size: 75px 75px;  
+        background-position: center;  
+        background-repeat:repeat; 
+        background-attachment: fixed;
+        box-sizing: border-box;
+      }
+
+      .body-bg {
+        background-color: rgba(128, 0, 0, 0.409);
+        border-radius: 2vw;
+      }
+
+      .header {
+        color:gold;
+        text-align: center;
+        font-size: 2vw;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, maroon, #600000);
+        padding: 1rem;
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        position: sticky;
+        z-index: 10;
+        top:0;
+      }    
+
+      a {
+        text-decoration: underline;
+        color:white;
+      }
+      .parent {
+        display: flex;
+        flex-wrap: wrap; /*elements will wrap based on vp size*/ 
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+      }
+
+      /* Each image box */
+      .galimg {
+        flex: 1 1 calc(25% - 8px); /* 4 per row on large screens */
+        border: 0.1rem solid gold;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .galimg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .galimg:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .galimg {
+          flex: 1 1 calc(33.333% - 8px); /* 3 per row */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .galimg {
+          flex: 1 1 calc(50% - 8px); /* 2 per row */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .galimg {
+          flex: 1 1 100%; /* 1 per row */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="body-bg">
+        <div class="header">
+          <header style="font-size: 5vw;">Lesego PPS | Gallery</header>
+          <hr style="border:solid 0.1rem gold; margin: 1vw;">
+        <p>Peruse our most memorable times.           For more of the same, follow us on <a href="https://facebook.com/groups/207641860580197/">Facebook</a>  </p>
+        </div>
+        <div class="parent">
+          <div class="galimg"><img src="images\gallery\setswana reading champsh.jpg" alt="family picture"></div>
+          <div class="galimg"><img src="images\gallery\heritage day.jpg" alt="family picture"></div>
+          <div class="galimg"><img src="images\gallery\community awareness.jpg" alt=""></div>
+          <div class="galimg"><img src="images\site pic\Office pic (2).jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\1762946707995.jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\girls sccer teamh.jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\mzi inspire.jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\walkin.jpg" alt=""></div>
+          <div class="galimg"><img src="images\site pic\IMG-20251119-WA0062.jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\speech.jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\safety stuff.jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\marumo mtoivates.jpg" alt=""></div>
+          <div class="galimg"><img src="images\gallery\external.jpg" alt=""></div>
+          <div class="galimg"><img src="images\site pic\IMG-20251119-WA0056.jpg" alt=""></div>
+          <div class="galimg"><img src="images\site pic\IMG-20251119-WA0018.jpg" alt=""></div>
+          <div class="galimg"><img src="images\site pic\IMG-20251119-WA0041.jpg" alt=""></div>
+          <div class="galimg"><img src="images\site pic\IMG-20251119-WA0025.jpg" alt=""></div> 
+          <div class="galimg"><img src="images\site pic\Office pic.jpg" alt=""></div>
+          <div class="galimg"><img src="images\site pic\IMG-20251119-WA0017.jpg" alt=""></div> 
+          <div class="galimg"><img src="images\site pic\IMG-20251119-WA0036.jpg" alt=""></div>
+      </div>
+
+    
+    </main>
+  </body>
+</html>

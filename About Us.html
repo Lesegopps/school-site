@@ -1,0 +1,561 @@
+        <!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesego PPS | About</title>
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    
+    /* === CORE RESET === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  color: gold;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* prevents outer scrollbar */
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  background-image: url('images/site pic/log_01.jpg');
+  background-size: 75px 75px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+/* === HEADER & NAV === */
+.header {
+  background: maroon;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 4vw;
+  font-weight: bold;
+  border-bottom: solid gold 0.15rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  color: gold;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* === Nav Menu === */
+.navmenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: linear-gradient(to right, maroon, #4d0000);
+  border-bottom: solid gold 0.1rem;
+  position: sticky;
+  top: 4rem;
+  z-index: 9;
+  max-height: 1000px; /* large enough for desktop */
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+  overflow: hidden;
+  opacity: 1;
+}
+
+/* Nav Buttons */
+.navbut {
+  color: gold;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.navbut:hover,
+.navbut.active {
+  background: gold;
+  color: maroon;
+  border-radius: 0 0 1rem 1rem;
+}
+
+/* === MAIN CONTENT === */
+.content {
+  height: calc(100vh - 8.5rem);
+  overflow-y: auto; /* vertical scroll only */
+  scroll-behavior: smooth;
+  padding: 2rem;
+  background: rgba(128, 0, 0, 0.85);
+}
+
+/* === SECTION ANIMATION === */
+.content-section {
+  display: none;
+  animation: fadeUp 0.5s ease;
+}
+
+.content-section.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === TEXT ELEMENTS === */
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom: solid gold 0.1rem;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+p, li, address {
+  font-size: 1.1rem;
+  margin-bottom: 0.9rem;
+  
+}
+
+/* === UNIVERSAL HORIZONTAL SCROLL STYLE === */
+.scroll-x {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+.scroll-x::-webkit-scrollbar {
+  height: 0.5rem;
+}
+.scroll-x::-webkit-scrollbar-thumb {
+  background: gold;
+  border-radius: 1rem;
+}
+
+/* === ELEMENTS INSIDE HORIZONTAL SCROLL === */
+.scroll-x > * {
+  flex: 0 0 clamp(250px, 70%, 350px);
+  scroll-snap-align: start;
+}
+
+/* === PROGRAMS SECTION === */
+  .programs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.prodiv {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  color: white;
+  transition: transform ease 0.5s;
+}
+
+.prodiv:hover{
+transform: scale(1.05);
+}
+
+/* === STAFF SECTION === */
+.staff-row {
+  composes: scroll-x;
+}
+
+.staff-card {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid gold;
+  border-radius: 1rem;
+  width: 250px;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+}
+
+.staff-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* === SGB SECTION === */
+.sgb-container {
+  padding-bottom: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sgb-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid gold;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  min-width: 100%;
+  transition: transform 0.3s; 
+  
+}
+
+.sgb-card:hover {
+  transform: scale(1.03);
+ 
+}
+
+.sgb-image img {
+  width: 90%;
+  border-radius: 0.8rem;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  
+  .header {
+    font-size: 6vw;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .navmenu {
+    display: flex;          
+    flex-direction: column;  
+    max-height: 0;           
+    opacity: 0;
+  }
+
+  .navmenu.show {
+    max-height: 500px;       /* adjust as needed */
+    opacity: 1;
+  }
+  .navbut.active{
+    border-radius: 0 0 1rem 0;
+    margin: 0.6rem 1rem;
+    padding: 0 1rem 0 0;
+    }
+
+  .navbut { 
+    font-size: 1rem;
+    }
+
+  .sgb-card {
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .sgb-card img {
+    width: 100%;
+    position: relative;
+  }
+
+  .content { padding: 1rem;  }
+  p, li { font-size: 1rem; }
+}
+
+    </style>
+
+</head>
+ <body> 
+    
+    <div class="header"><header >Lesego PPS | About Us</header></div>
+            <div class="burger"><i class="fa-solid fa-bars"></i></div>
+           <div class="navmenu">
+                <div><a href="#" class="navbut" data-section="mission">Mission & Objective</a></div>
+                <div><a href="#" class="navbut" data-section="facts">Factual Information</a></div>
+                <div><a href="#" class="navbut" data-section="programs">Programmes</a></div>
+                <div><a href="#" class="navbut" data-section="team">The Team</a></div>
+            </div>
+
+        <!---the rows in the content div are here-->
+        <main class="content">
+            <section id="welcome" class="content-section active">
+                <p>Welcome! Click a section above to view its content.</p>
+              
+            </section>
+
+            <section id="mission" class="content-section">      
+                <h2 id="Us">Our Mission and Objectives</h2>
+                <p>We, the parents, S.G.B., educators and non-teaching staff fully commit and dedicate ourselves to the satisfaction of the basic academic and extra-curricula needs of our learners throurgh effective effective rendering of such services, that will lay a sound foundation  for their future academic and extre curricula development and success.</p> <br> We intend to attain this through:
+                    <ol>
+                        <li>The improvement and maintenance of available physical resources.</li>
+                        <li>Optimum utilisation and development of available human resources.</li>
+                        <li>Acquisistion of educational aids such as textbooks, learning aids, equipment, etc.</li>
+                        <li>Erection of laboratory and media centre.</li>
+                        <li>Improvemnt of administration through the acquisition of a computer, in order to ensure the safe-keeping of accurate and reliable information.</li>
+                        <li>Acquistion of equipment for sports and cultural activities selected, and incorporation of extra-curricula programmes</li>
+                    </ol>
+            </section>
+
+            <section id="facts" class="content-section">
+                <h2>Information about our school</h2>
+                    <p>Phase: Primary School</p>
+                    <p>Sector: Public </p>
+                    <p>Specialisation: Comprehensive</p>
+                    <p>Quintile: 3 </p>
+                    <p>EMIS Number: 600100875 </p>
+                    <p>Physical Address: <br> <address> 6118 Maaroganye Street <br> Ikageng, Tlokwe <br> 2531 </address></p>
+            </section>
+
+            <section id="programs" class="content-section">
+                  <h2>Our Programs</h2>
+                    <div class="programs-container">
+                    <div class="prodiv" style="background:red;">Foundational literacy and numeracy</div>
+                    <div class="prodiv" style="background:blue;">Health & nutrition education</div>
+                    <div class="prodiv" style="background:green;">Creative Arts Activities</div>
+                    <div class="prodiv" style="background:yellow; color: black;">Gardening & sustainability projects</div>
+                    <div class="prodiv" style="background:purple;">Entrepreneurship and financial skills</div>
+                    <div class="prodiv" style="background:white; color:black;">Sports and Enrichment</div>
+                    <div class="prodiv" style="background:black;">Personal & Social Development</div>
+                    </div>
+
+            </section>
+
+            <!--the rows of the team members are here-->
+            <section id="team" class="content-section">
+
+                <div class="staff-sections">
+
+                        <!-- === Teachers Section === -->
+                        <section  class="staff-category">
+                            <h2>Educators</h2>
+                            <div class="staff-row scroll-x">
+                                <div class="staff-card">
+                                    <img src="images\staff\Grade R.jpg" alt="Teachers and their phases">
+                                    <h3>Pre-School Phase</h3>
+                                    <p>Grade R</p>
+
+                                </div>
+                                <div class="staff-card">
+                                    <img src="images\staff\Found.jpg" alt="Teachers and their phases">
+                                    <h3>Foundation Phase</h3>
+                                    <p>Grades 1-3</p>
+
+                                </div>
+                                <div class="staff-card">
+                                    <img src="images\staff\Interm P (4.2).jpg" alt="Teachers and their phases" height="300px">
+                                    <h3>Intermediate Phase</h3>
+                                    <p>Grades 4-6</p>
+
+                                </div>
+                                <div class="staff-card">
+                                    <img src="images\staff\Senor.jpg" alt="Teachers and their phases">
+                                    <h3>Senior Phase</h3>
+                                    <p>Grade 7</p>   
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <!-- === SMT Section === -->
+                        <section class="staff-category">
+                            <h2>School Management Team (SMT)</h2>
+                            <div class="staff-row scroll-x">
+                              <div class="staff-card">
+                                  <img src="images\staff\Princ.jpg" alt="Principal Mr. Mojapele">
+                                  <h3>Mr. Mojapele</h3>
+                                  <p>Principal</p>
+
+                              </div>
+
+                              <div class="staff-card">
+                                  <img src="images\staff\Xaba.jpg" alt="Deputy Principal">
+                                  <h3>Mrs. Xaba</h3>
+                                  <p>Deputy Principal</p>
+
+                              </div>
+                                  <div class="staff-card">
+                                      <img src="images\staff\Lefa.jpg" alt="HOD">
+                                      <h3>Ms. Lefatshe</h3>
+                                      <p>HOD: Foundation Phase</p>
+
+                                  </div>
+                              <div class="staff-card">
+                                      <img src="images\staff\Tsim.jpg" alt="HOD">
+                                      <h3>Ms. Tsimane</h3>
+                                      <p>HOD: Foundation Phase</p>
+
+                                  </div>
+
+                              <div class="staff-card">
+                                      <img src="images\staff\Sega.jpg" alt="HOD">
+                                      <h3>Ms. Segakweng</h3>
+                                      <p>HOD: Intermediate Phase</p>
+
+                                  </div>
+
+                              <div class="staff-card">
+                                      <img src="images\staff\Modi (4.2).jpg" alt="HOD">
+                                      <h3>Mr. Modiroa</h3>
+                                      <p>HOD: Senior Phase</p>
+                                  </div>
+
+                        </div>
+                        </section>
+
+                        <!-- === Support Section === -->
+                        <section class="staff-category">
+                            <h2>Support Staff (non-teaching staff)</h2>
+                            <div class="staff-row  scroll-x">
+                              <div class="staff-card">
+                                  <img src="images\staff\Poster.jpg" alt="Admin Clerk Ms. Lekgetho">
+                                  <h3>Ms. Lekgetho</h3>
+                                  <p>Admin Clerk</p>
+                              </div>
+
+                              <div class="staff-card ">
+                                  <img src="images\staff\GA.jpg" alt="Pic ya Aus Thando">
+                                  <h3>Mr. Leie & Ms. Thakathayo </h3>
+                                  <p>General Assistance and Maintenance Staff</p>
+                              </div>
+
+                              <div class="staff-card">
+                                  <img src="images\staff\NSNP .jpg" alt="Pic ya baapei">
+                                  <h3>National School Nutrition Programme Staff</h3>
+                                  <p>Food Handlers and Kitchen Staff</p>   
+                              </div>
+
+                              <div class="staff-card">
+                                  <img src="images\gallery\EA squad (1).jpg" alt="Pic ya baapei">
+                                  <h3>Education, Administartion & General School Assistants</h3>
+                                  <p>Short-term Contract Employees, Internships. WIL Students</p>
+                              </div>
+
+                            </div>
+                        </section>
+
+                        <!-- === SGB Section === -->
+                       <section class=" sgb-category">
+                            <h2>School Governing Body (SGB)</h2>
+                            <div class="sgb-scroll">
+                                <div class="sgb-container  scroll-x">
+                                    <div class="sgb-card">
+                                        <div class="sgb-image">
+                                            <img src="images\gallery\comunity involvement h.jpg" alt="SGB Management">
+                                        </div>
+
+                                        <div class="sgb-info">    
+                                            <h3>2025</h3> 
+                                            <p><strong>President:</strong> Mr. Mojapele</p>
+                                            <p><strong>Chairperson:</strong> Mr. P. Nhlophe</p>
+                                            <p><strong>Secretary:</strong> Ms. Sekhotho</p>
+                                            <p><strong>Treasurer:</strong> Ms. Sefako </p>
+                                            <p><strong>Representive Body:</strong> Mr. Nyokong, Ms. Seoalo, Mr. Leie, Mr. Nkomo, Mr. Mosimegi</p>  
+                                        </div>
+                                        </div>
+                                  </div>
+                              </div>    
+                        </section>
+                    </div>
+            </section>
+
+        </main>
+          </div>
+
+        <script>
+            //for all intents and purposes it is important I declare that all JS was done with the help of AI, particularly ChatGPT.  
+
+            const buttons = document.querySelectorAll(".navbut");
+            const sections = document.querySelectorAll(".content-section");
+            const welcomeSection = document.getElementById("welcome");
+
+            let activeButton = null;
+
+            // Function to activate a section by name
+            function activateSection(sectionName) {
+                // Hide all sections
+                sections.forEach(sec => sec.classList.remove("active"));
+                // Deactivate all buttons
+                buttons.forEach(btn => btn.classList.remove("active"));
+
+                if(sectionName) {
+                // Activate the target section
+                const targetSection = document.getElementById(sectionName);
+                if(targetSection) {
+                    targetSection.classList.add("active");
+                }
+
+                // Highlight the corresponding button
+                const targetButton = Array.from(buttons).find(btn => btn.getAttribute("data-section") === sectionName);
+                if(targetButton) {
+                    targetButton.classList.add("active");
+                    activeButton = targetButton;
+                }
+                } else {
+                // If no section, show welcome
+                welcomeSection.classList.add("active");
+                activeButton = null;
+                }
+            }
+
+            // Button click handling
+            buttons.forEach(btn => {
+                btn.addEventListener("click", e => {
+                e.preventDefault();
+                const target = btn.getAttribute("data-section");
+
+                // Toggle: same button clicked again → go back to welcome
+                if(activeButton === btn) {
+                    activateSection(null);
+                    return;
+                }
+
+                // Activate the clicked section
+                activateSection(target);
+                });
+            });
+
+            // Handle links with ?section=...
+            window.addEventListener('DOMContentLoaded', () => {
+                const params = new URLSearchParams(window.location.search);
+                const sectionParam = params.get('section');
+                if(sectionParam) {
+                activateSection(sectionParam);
+                // optional: smooth scroll to section
+                document.getElementById(sectionParam)?.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+           
+            const burger = document.querySelector('.burger');
+            const navMenu = document.querySelector('.navmenu');
+
+            burger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            });
+
+
+
+        </script>
+
+</body>
+</html>

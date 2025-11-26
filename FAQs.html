@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesego Primary School | FAQs</title>
+        <style>
+           
+           body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefefe;
+            background-image: url('images/site pic/log_01.jpg'); 
+            background-size: 75px 75px;  
+            background-position: center;  
+            background-repeat:repeat; 
+            background-attachment: fixed;
+            color: gold;
+            margin: 0;
+            padding:0;
+            }
+
+            .headings  {
+            text-align: center;
+            font-size: 2vw;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, maroon, #600000);
+            padding: 1rem;
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            position: sticky;
+            top:0;
+            z-index: 10;
+            }
+
+            .container {
+            max-width: 1000px;
+            margin: 0 auto; 
+            background: rgba(128, 0, 0, 0.63);
+            border: solid gold 0.2rem;
+            padding: 1em;
+            border-radius: 0.8rem;
+            }
+
+            details {
+            border: gold solid 1px;
+            border-radius: 0.8rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: rgba(128, 0, 0, 0.726);
+
+            }
+
+            details:hover {
+            transform: scale(1.01);
+            box-shadow: 0 4px 10px rgba(128, 0, 0, 0.2);
+            }
+
+            summary {
+            font-weight: bold;
+            color: gold;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+           
+            }
+
+            summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: gold;
+            transition: transform 0.3s ease;
+            }
+
+            details[open] summary::after {
+            content: "−";
+            transform: rotate(180deg);
+            }
+
+            details p {
+            margin-top: 1rem;
+            line-height: 1.7;
+            color: gold;
+            animation: fadeIn 0.4s ease;
+            }
+
+            @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+            }
+
+            .intext {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+            }
+
+            .back {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(128, 0, 0, 0.581);
+            color: gold;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            border-bottom: solid gold 0.1rem;
+            border-left: solid gold 0.2rem;    
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            }
+
+            .back:hover {
+            background: gold;
+            color: maroon;
+            transform: scale(1.1);
+            }
+
+            /*Responsive styling */
+            @media (max-width: 768px) {
+                body {
+                padding:0.2rem;
+                padding-top: 0;
+                }
+
+                .headings h1 {
+                    font-size: 1.5rem;
+                }
+
+                summary {
+                    font-size: 1.05rem;
+                }
+
+                details {
+                    padding: 1rem;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="headings">
+            <h1>Lesego PPS | Frequently Asked Questions</h1>
+        </div>
+        <div class="container">
+            <details>
+                <summary>When does registration for new learners open?</summary>
+                <p>Registration for the following school year usually opens between March and July, depending on provincial guidelines. Parents are encouraged to apply as early as possible to secure a place.</p>
+            </details>
+
+            <details>
+                <summary>What documents are required when applying for admission?</summary>
+                <p>You will need the child’s birth certificate, immunisation/clinic card, the parent or guardian’s ID, and proof of residence such as a utility bill or lease agreement. If the learner is transferring from another school, please include their most recent school report or transfer card.</p>
+            </details>
+
+            <details>
+                <summary>At what age can my child start Grade R or Grade 1?</summary>
+                <p>Children may start Grade R at age 5, provided they turn 6 during the school year. Grade 1 admission is for children aged 6 turning 7 in the year of admission.</p>
+            </details>
+
+            <details>
+                <summary>Can my child be admitted if I don’t have all the required documents yet?</summary>
+                <p>Yes. A learner may not be refused admission because of missing documents. Parents will be given time to provide any outstanding paperwork after registration.</p>
+            </details>
+
+            <details>
+                <summary>Does the school charge fees?</summary>
+                <p>Our school is a non-fee paying school that is fully funded by the Department of Education and occasional fund-raising projects organised internally by the school. It is important to note that admission and registration to our school is entirely free. Occasional fund-raising and extra-curricula events would prompt parents' financial investment.</p>
+            </details>
+
+            <details>
+                <summary>How are learners placed when there are more applications than spaces?</summary>
+                <p>Priority is given to children who live closest to the school, followed by those who already have a sibling enrolled, then those whose parent or guardian works in the area. Learners from outside the feeder zone may be considered if space remains.</p>
+            </details>
+
+            <details>
+                <summary>Can learners from outside South Africa apply?</summary>
+                <p>Yes. All children residing in South Africa, including those without full documentation, have the right to attend school. Parents should provide whatever documents are available and continue the process with the Department of Home Affairs if needed.</p>
+            </details>
+
+            <details>
+                <summary>What subjects are taught at the school?</summary>
+                <p>Our school follows the Curriculum and Assessment Policy Statement (CAPS) set by the Department of Basic Education. Subjects include Languages, Mathematics, Life Skills, Natural Sciences, Social Sciences, Technology, and Creative Arts. We teach in Setswana Home Language through all grades and English as a First Additional Language from Grade 4 to 7.  </p>
+            </details>
+
+            <details>
+                <summary>What are the school hours?</summary>
+                <p>School hours generally run from 7:30 a.m. to 1:30 p.m., but this may vary by grade or activity. Parents should confirm the specific timetable with the class teacher or school office.</p>
+            </details>
+
+            <details>
+                <summary>Who can I contact for more information?</summary>
+                <p>For questions about admissions, fees, or general school matters, please contact the school office during working hours. You can also reach the admissions officer or principal using the  <a href="Contacts.html" target="_blank" class="intext"> contact details</a> provided on this website. Alternatively, our <a href="Community.html" target="_blank" class="intext">open-gate policy</a> allows people to visit our school physically (subjects to certain conditions, of course)</p>
+            </details>
+
+            <a href="index.html" class="back">← Back to Home</a> <br>
+            <a target="_blank"  href="Contacts.html" class="back" >&#8594; Contact Information</a>
+    </div>
+    </body>
+</html>

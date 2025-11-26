@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesego PPS | Admissions Information</title>
+    <style>
+      body {
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #fefefe;
+          background-image: url('images/site pic/log_01.jpg');
+          background-size: 75px 75px;
+          background-repeat: repeat;
+          color: gold;
+          margin: 0;
+          padding: 0;
+          overflow-y: hidden;
+      }
+
+      .head {
+          text-align: center;
+          font-size: 3vw;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(to right, rgba(128, 0, 0, 0.89), rgba(96, 0, 0, 0.796));
+          padding: 1rem;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s ease;
+      }
+
+      .adinfo {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: center;
+          gap: 1rem;
+          margin: 0 0 1vw 0;
+          position: sticky;
+          top: 0rem;
+          z-index: 0;
+          background: linear-gradient(to right, rgba(128, 0, 0, 0.656), rgba(96, 0, 0, 0.796));
+          padding: 1.5rem 01rem;
+          border-top: solid gold 0.2rem;
+      }
+
+      .adinfo .btn {
+          background: maroon;
+          color: gold;
+          padding: 0.75rem 1.25rem;
+          border: 0.1rem solid gold;
+          border-radius: 0.5rem;
+          text-decoration: none;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+      }
+
+      .adinfo .btn:hover,
+      .adinfo .btn.active {
+          background: gold;
+          color: maroon;
+      }
+
+      #content {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 0 1rem 0.5rem ;
+      }
+    .infcrd {
+        display: block;               /* Keep block for layout */
+        opacity: 0;                   /* Start invisible */
+        max-height: 0;                /* Collapse height */
+        overflow: hidden;             /* Hide overflowing content */
+        background: rgba(128,0,0,0.85);
+        border-top: solid gold 0.3rem;
+        padding: 0 1.5rem;            /* Start padding at 0 for transition */
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.8;
+        transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease;
+    }
+
+    .infcrd.active {
+        opacity: 1;                   /* Fully visible */
+        max-height: 1000px;           /* Big enough to show all content */
+        padding: 1.5rem;              /* Restore padding */
+        }
+
+      .infcrd ul {
+          padding-left: 1.5rem;
+      }
+
+      .infcrd li {
+          margin-bottom: 0.5rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+          .head {
+              font-size: 6vw;
+              text-align: left;
+              padding-left: 1rem;
+          }
+
+          .adinfo {
+              flex-direction: column;
+              align-items: stretch;
+              gap: 0.5rem;
+              margin: 0.5rem 0;
+          }
+
+          .adinfo .btn {
+              font-size: 1rem;
+              padding: 0.6rem 1rem;
+          }
+
+          .infcrd {
+              font-size: 1rem;
+              padding: 1rem;
+          }
+      }
+  </style>
+
+</head>
+
+<body>
+    
+  <header class="head">
+      <h3 style="margin: 0 auto ;">LESEGO PPS | Admissions Information</h3>
+  </header>
+
+  <div id="container">
+
+      <!-- Buttons for sections -->
+      <div class="adinfo">
+          <a href="#" class="btn" onclick="showSection(0)">Registration Information</a>
+          <a href="#" class="btn" onclick="showSection(1)">Required Documents</a>
+          <a href="#" class="btn" onclick="showSection(2)">Admission Criteria</a>
+          <a href="#" class="btn" onclick="showSection(3)">Financial Obligations</a>
+      </div>
+
+      <!-- Content Sections -->
+      <div id="content">
+          <div class="infcrd active">
+              <p>Lesego Public Primary is bound by the South African Schools Act (1996) and North West Department of Education policies:</p>
+              <ul>
+                  <li>Admission cannot be refused based on race, language, religion, or financial standing. Education is compulsory from Grades 1–9, or until the child is 15 years old.</li>
+                  <li>Our school is no-fee paying. <strong>Registration and admission are FREE</strong>.</li>
+                  <li>Grade R: 5 turning 6; Grade 1: 6 turning 7 in the year of admission.</li>
+                  <li>Application forms are available at the school office. Parents are advised to complete as much as possible and consult staff if needed.</li>
+              </ul>
+          </div>
+
+          <div class="infcrd">
+              <p>Required documents for admission:</p>
+              <ul>
+                  <li>Completed Application form</li>
+                  <li><strong>Certified</strong> copy of Parent's ID or Passport</li>
+                  <li>Proof of residence (Municipal Rates letter)</li>
+                  <li>3 wallet-sized pictures of the child</li>
+                  <li><strong>Certified</strong> copy of the child's birth certificate</li>
+                  <li>Transfer letter and progress report (if applicable)</li>
+              </ul>
+          </div>
+
+          <div class="infcrd">
+              <p>Admission criteria:</p>
+              <ul>
+                  <li><strong>Age</strong>: Must meet Grade R/1 age requirements; otherwise, admission may be deferred.</li>
+                  <li><strong>Incomplete Application</strong>: Missing documents must be submitted when requested, or the application may be dismissed.</li>
+                  <li><strong>Special Needs</strong>: All learners are admitted irrespective of ability. Limited resources will be addressed collaboratively with parents.</li>
+              </ul>
+          </div>
+
+          <div class="infcrd">
+              <p>Financial obligations:</p>
+              <ul>
+                  <li>Grade R graduation fees</li>
+                  <li>Farewell expenses</li>
+                  <li>Civvies Day</li>
+              </ul>
+              <p>All other registration and admission processes are free of charge.</p>
+          </div>
+      </div>
+
+  </div>
+
+        <script>
+      function showSection(index) {
+          const sections = document.querySelectorAll('.infcrd');
+          const target = sections[index];
+
+          if (target.classList.contains('active')) {
+              target.classList.remove('active');
+              return;
+          }
+
+          sections.forEach(sec => sec.classList.remove('active'));
+          target.classList.add('active');
+
+          // Update button states
+          const buttons = document.querySelectorAll('.adinfo .btn');
+          buttons.forEach(btn => btn.classList.remove('active'));
+          buttons[index].classList.add('active');
+      }
+
+      // Activate first section by default
+      document.addEventListener('DOMContentLoaded', () => {
+          showSection(0);
+      });
+  </script>
+
+    
+</html>

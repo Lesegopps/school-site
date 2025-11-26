@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesego PPS | Home</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+                      /*==============INDEX / HOME PAGE CSS==========================*/
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: gold;
+      background-color: #fefefe;
+      background-image: url('images/site pic/log_01.jpg'); /* path to your image */
+      background-size: 75px 75px;   /* fills the whole screen */
+      background-position: center;  /* keeps it centered */
+      background-repeat:repeat; /* prevents tiling */
+      background-attachment: fixed;
+    }
+
+    /* HERO */
+    .hero {
+      color: #ffd700;
+      text-align: center;
+      padding: 0 0 0 0;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .hero-content {
+      background: maroon;
+      width: 100%;
+      padding-bottom: 2rem;
+      border-top: solid gold 0.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.4rem;
+      background: #ffca28;
+      color: rgb(128, 0, 32);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ffd54f;
+      transform: scale(1.1);
+    }
+
+    /* HIGHLIGHTS */
+    .highlights {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 0.1rem 1rem 2rem  ;
+      background: rgba(128, 0, 0, 0.7);
+      border-radius: 2%  2% 0 0;  
+    }
+
+    .highlights div {
+      flex: 1 1 200px;
+      text-align: center;
+      padding: 1rem;
+      color: gold;      
+      font-weight: 500;  
+      border-top: gold solid 0.1rem;
+      border-bottom:  gold solid 0.1rem;
+    }
+
+    .fas, .fa-solid {
+      color: gold;         /* icon color */
+      font-size: 2rem;     /* icon size */
+      transition: all ease 0.2s;
+      margin:1vw;
+    }
+
+    .fas:hover {
+      color: #fff; 
+      transform: scale(1.4);
+    }
+
+
+    /* ABOUT */
+    .about-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 1rem;
+      flex-wrap: wrap;
+      background: maroon;
+    }
+
+    .about-preview-text{
+      text-align: center;
+      color: gold;
+    }
+
+    .about-preview img {
+      width: 35vw;
+      border-radius: 8px;
+    }
+
+    /* ANNOUNCEMENTS (Important information)*/
+    .announcements {
+      padding: 2rem 1rem;
+      background: rgba(128, 0, 0, 0.7);
+      text-align: center;
+    
+    }
+
+    .announcements h2 {
+      color:gold;
+      display: block;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: rgba(128, 0, 0, 0.727);
+      border: 2px solid gold;
+      border-radius: 1rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .card a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: gold;
+      height: 100%;
+      width: 100%;
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      margin-bottom: 0.6rem;
+      color: gold;
+      transition: transform 0.3s ease;
+    }
+
+    .card p {
+      font-weight: bold;
+      margin: 0.2rem 0;
+    }
+
+    .card .hint {
+      font-size: 0.85rem;
+      color: gold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+
+    .card:hover,
+    .card:focus-within {
+      background: maroon;
+      color: gold;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(128,0,0,0.3);
+    }
+
+    .card:hover .hint,
+    .card:focus-within .hint {
+      opacity: 1;
+      color: gold;
+    }
+
+    .card:hover i,
+    .card:focus-within i {
+      transform: scale(1.2);
+      color: gold;
+    }
+
+    .card:active {
+      transform: scale(0.97);
+    }
+
+
+    /* GALLERY */
+    .gallery-preview {
+      padding: 2rem 1rem;
+      text-align: center;
+      background-color:maroon;
+      color: gold;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      overflow-x: hidden;
+      scroll-snap-type: x mandatory;
+      padding: 1rem;
+    }
+
+    .gallery img {
+      max-width: 30vw;
+      flex: 0 0 250px;
+      border: gold solid 0.5vw;
+      border-radius: 10px;
+      scroll-snap-align: start;
+    }
+
+    /* PRINCIPAL */
+    .principal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 1rem;
+      flex-wrap: wrap;
+      background: rgba(128, 0, 0, 0.7);
+      color: maroon;
+    }
+
+    .principal img {
+      width: 210px;
+      border-radius: 150%;
+      border: gold solid 0.2rem;
+    }
+    
+    #principal-text {
+      color:gold;
+      background: rgba(128, 0, 0, 0.613);
+      border-top: solid gold 0.2rem;
+      border-radius: 5%;
+    }
+
+    /* FOOTER */
+    footer {
+      background: maroon;
+      color: gold;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+   /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .about-preview,
+      .principal {
+        flex-direction: column;
+      }
+
+      .cards, .gallery {
+        gap: 0.5rem;
+      }
+
+      .gallery img {
+        max-width:30vw;
+        height: auto;
+      }
+      .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      .announcements {
+        flex-direction: row;
+      }
+
+      .cards {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .card {
+        flex: 0 0 70%;
+        scroll-snap-align: center;
+        min-width: 220px;
+      }
+
+      .card .hint {
+        opacity: 1;
+        color: #ded2d2;
+        font-size: 0.9rem;
+      }
+      }
+  </style>
+
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Lesego Public Primary School</h1>
+      <p style="font-style: italic;">Nothing But The Best</p>
+      <a href="About Us.html" target="_blank" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- QUICK INFO -->
+  <section class="highlights">
+    <div>
+      <a href="#"><i class="fa-solid fa-person-walking"></i></a>
+      <p>Monday to Friday: 07:30 – 13:00 </p>
+    </div>
+    <div>
+
+      <a href="https://maps.app.goo.gl/KP4czVshVLwJrrFT9" target="_blank" title="Find Us">
+    <i class="fas fa-map-marker-alt"></i>
+  </a><p>6118 Maaroganye Street, Ikageng, Tlokwe, 2531</p>
+    </div>
+
+    <!--CONTACTS--->
+    <div id="contacts">
+      <h3>Contact (click one)</h3>
+      <a href="tel:+27838471003" title="Call Us"><i class="fas fa-phone"></i></a>
+      <a href="mailto:lesegoprimary@gmail.com" title="Email Us"><i class="fas fa-envelope"></i></a>
+    <a href="Contacts.html" target="_blank" title="Contact Form"><i class="fas fa-solid fa-clipboard-list"></i></a>
+      <a href="https://facebook.com/groups/207641860580197/" target="_blank" title="Faceboook"><i class="fas fab fa-facebook"></i></a>
+      
+  </div> 
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="about-preview">
+    <img src="images\site pic\Site pic 3.jpg" alt="School building">
+    <div class="about-preview-text">
+      <h2>About Us</h2>
+      <p>Built on humanity, pride, initiative, community, respect and hope, our school aims to produce and be the cream of the crop. We may be guided by our ethical principles and legislative obligation, but are driven by the desire to be the firm foundation our nation's future requires. Our school strives to be a fortress of academic rigour, communal belonging and individual development for each and every one of our learners. We want nothing but the best, and work every single day to make it happen.</p>
+      <a href="About Us.html" target="_blank" class="btn">Read More</a>
+    </div>
+  </section>
+
+  <!-- ANNOUNCEMENTS -->
+  <section class="announcements"> 
+  <h2>Important Information</h2>
+  <div class="cards">
+    <div class="card">
+      <a href="Admissions.html" target="_blank">
+        <i class="fa-solid fa-pencil"></i>
+        <p>Admissions & Registration</p>
+        <span class="hint">Tap to view</span>
+      </a>
+    </div>
+    <div class="card">
+      <a href="FAQs.html" target="_blank">
+        <i class="fa-solid fa-comments"></i>
+        <p>Frequently Asked Questions</p>
+        <span class="hint">Learn more</span>
+      </a>
+    </div>
+    <div class="card">
+      <a href="Community.html" target="_blank">
+        <i class="fa-solid fa-people-group"></i>
+        <p>Community Involvement</p>
+        <span class="hint">Explore section</span>
+      </a>
+    </div>
+    <div class="card">
+      <a href="About Us.html?section=team" target="_blank">
+        <i class="fa-solid fa-person-chalkboard"></i>
+        <p>Meet the Team</p>
+        <span class="hint">See profiles</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- GALLERY PREVIEW -->
+  <section class="gallery-preview">
+    <h2>Gallery Highlights</h2>
+    <div class="gallery">
+      <img src="images\gallery\reading chmp compe.jpg" alt="Class activity">
+      <img src="images\gallery\heritage day.jpg" alt="Sports day">
+      <img src="images\gallery\speech.jpg" alt="School assembly">
+      
+      <img src="images\gallery\EA squad (1).jpg" alt="School assembly">
+     
+    </div>
+    <a href="Gallery.html" class="btn " target="_blank">View Full Gallery</a>
+  </section>
+
+  <!-- PRINCIPAL MESSAGE -->
+  <section class="principal">
+    <img src="images\staff\Tosi.jpg" alt="Principal photo">
+    <div id="principal-text">
+      <h2>Message from the Principal</h2>
+      <p>Welcome to Lesego Primary School! We take pride in providing a safe and stimulating environment where every learner feels valued and inspired to grow.</p>
+      <p><strong>– Mr. Mojapele L.W.</strong></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Lesego Public Primary School. All rights reserved.</p>
+    <p>6118 Maaroganye Street, Ikageng, Tlokwe, 2531 | Tel: +27 838 471 003</p>
+  </footer>
+
+</body>
+</html>
