@@ -113,7 +113,10 @@
         padding: 0.8rem;
       }
     }
-  </style>
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
     </style>
   </head>
   <body>
@@ -155,11 +158,18 @@
 </form>
 
 <script>
-  const form = document.querySelector('.contact-form');
-  const success = document.getElementById('success-message');
+  const form = document.querySelector('.contact-form'); // your form
+  const submitBtn = document.getElementById('submit-btn'); // submit button
+  const success = document.getElementById('success-message'); // optional success message
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    // Disable button and show spinner
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.innerHTML = 'Sending... <span class="spinner" style="display:inline-block; width:16px; height:16px; border:2px solid #fff; border-top:2px solid gold; border-radius:50%; animation:spin 0.8s linear infinite; margin-left:5px;"></span>';
+
     fetch(form.action, {
       method: form.method,
       body: new FormData(form),
@@ -167,13 +177,17 @@
     })
     .then(response => {
       if (response.ok) {
-        success.style.display = 'block';
+        if (success) success.style.display = 'block'; // show success message
         form.reset();
       } else {
         alert('Oops! There was a problem sending your message.');
       }
     })
-    .catch(() => alert('Oops! There was a problem sending your message.'));
+    .catch(() => alert('Oops! There was a problem sending your message.'))
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText; // restore original text
+    });
   });
 </script>
 
@@ -182,6 +196,7 @@
 
   </body>
 </html>   
+
 
 
 
