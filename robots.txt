@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moxy-rae.github.io/school-site/sitemap.xml
